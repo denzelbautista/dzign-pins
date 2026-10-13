@@ -1,0 +1,34 @@
+{
+  "designs": [
+    {
+      "id": "design-1",
+      "src": "/designs/ejemplo1.jpg",
+      "alt": "Dise\u00f1o Dzing Pins 1",
+      "fit": "cover"
+    },
+    {
+      "id": "design-2",
+      "src": "/designs/ejemplo2.jpg",
+      "alt": "Dise\u00f1o Dzing Pins 2",
+      "fit": "contain"
+    },
+    {
+      "id": "design-3",
+      "src": "/designs/ejemplo3.jpg",
+      "alt": "Dise\u00f1o Dzing Pins 3",
+      "fit": "contain"
+    },
+    {
+      "id": "design-4",
+      "src": "/designs/ejemplo4.jpg",
+      "alt": "Dise\u00f1o Dzing Pins 4",
+      "fit": "contain"
+    },
+    {
+      "id": "design-5",
+      "src": "/designs/ejemplo5.jpg",
+      "alt": "Dise\u00f1o Dzing Pins 5",
+      "fit": "contain"
+    }
+  ]
+}

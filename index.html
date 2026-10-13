@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f7f2">
+    <meta name="description"
+        content="Pines personalizados de 3.2 cm hechos en Lima. Dale forma a tus ideas y prueba tu diseño en nuestro simulador 3D.">
+    <title>Dzing Pins — Ideas que van contigo</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+    <header class="header"><a class="wordmark" href="#" aria-label="Dzing Pins, inicio">dzing<span>pins</span></a>
+        <nav aria-label="Navegación principal"><a href="#el-pin">El pin</a><a href="#simulador">Prueba tu diseño</a><a
+                href="#como-pedir">Cómo pedir</a></nav><button class="contact-button whatsapp-button" data-contact><svg
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                    d="M20.5 3.5A11.9 11.9 0 0 0 1.7 17.8L0 24l6.4-1.7A11.9 11.9 0 0 0 24 12a11.8 11.8 0 0 0-3.5-8.5ZM12 21.8a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.8 1 1-3.7-.3-.4A9.9 9.9 0 1 1 12 21.8Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5H8c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 5 4.4 1.8.8 2.5.9 3.4.7.6-.1 1.7-.7 1.9-1.3.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.5-.4Z"
+                    fill="currentColor" />
+            </svg> Hablemos</button>
+    </header>
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-art">
+                <div id="hero-scene" class="hero-scene" role="img"
+                    aria-label="Cinco pines en 3D con los diseños proporcionados y un reverso de plástico blanco con broche metálico"></div>
+                <div class="hero-caption"><span class="tiny">Ø 3.2 CM <span class="long-arrow">⟷</span></span><span
+                        id="hero-examples" class="hero-examples">Diseños de ejemplo</span></div>
+            </div>
+            <div class="hero-copy">
+                <p class="eyebrow">PINES PERSONALIZADOS</p>
+                <h1 id="hero-title">Tus ideas<br>merecen<br>salir contigo<span class="period">.</span></h1>
+                <p class="hero-description">Una ilustración, una frase, tu marca.<br>Conviértela en un pin y llévala a
+                    todas partes.</p>
+                <div class="hero-actions"><a class="button button-dark" href="#simulador">Prueba tu diseño
+                        <span>↗</span></a><a class="text-link" href="#como-pedir">Quiero mis pines <span>→</span></a>
+                </div>
+                <div class="hero-foot"><span>Desde <strong>S/ 2.50</strong> por pin</span><span
+                        class="mini-line"></span><span>Un diseño · mínimo 10</span></div>
+            </div>
+        </section>
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <div class="ticker-copy">LO QUE TE MUEVE <span>·</span> LO QUE TE REPRESENTA <span>·</span> LO QUE
+                    QUIERES DECIR <span>·</span></div>
+                <div class="ticker-copy">LO QUE TE MUEVE <span>·</span> LO QUE TE REPRESENTA <span>·</span> LO QUE
+                    QUIERES DECIR <span>·</span></div>
+                <div class="ticker-copy">LO QUE TE MUEVE <span>·</span> LO QUE TE REPRESENTA <span>·</span> LO QUE
+                    QUIERES DECIR <span>·</span></div>
+            </div>
+        </div>
+        <section id="simulador" class="simulator section">
+            <div class="sim-heading">
+                <p class="eyebrow">HAZLO TUYO</p>
+                <h2>De tu pantalla<br>a tu <span class="outline-text">pin.</span></h2>
+                <p>Sube una imagen, encuentra el encuadre<br>y mira tu idea desde todos los ángulos.</p>
+            </div>
+            <div class="studio">
+                <div class="studio-stage">
+                    <div class="studio-top tiny"><span id="stage-label">VISTA PREVIA 3D</span><span>Ø 3.2 CM</span>
+                    </div>
+                    <div id="studio-scene" role="img" tabindex="0"
+                        aria-label="Vista previa interactiva de tu pin. Usa las flechas para girar o ajustar la imagen; Inicio restablece la vista."></div>
+                    <div class="editor-guides" id="editor-guides">
+                        <div class="guide-ring"></div><span>Área visible aproximada</span>
+                    </div>
+                    <div class="studio-bottom"><span id="gesture-hint">Arrastra para girar · mira el
+                            reverso</span>
+                        <div class="studio-tools"><button class="icon-button" id="toggle-light" title="Quitar reflejos del diseño (acabado mate)"
+                                aria-label="Alternar reflejos del diseño" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6m-4 3h2m-4-6.5a6 6 0 1 1 6 0c-.8 1-1.5 2-1.5 3.5H10.5C10.5 16.5 9.8 15.5 9 14.5z"/></svg></button><button class="icon-button" id="turn-back" title="Ver el reverso"
+                                aria-label="Ver el reverso del pin">↻</button></div></div>
+                </div>
+                <div class="studio-controls">
+                    <div class="controls-title"><span class="tiny">TU PEQUEÑO LIENZO</span></div>
+                    <h3>Ahora, tu idea.</h3>
+                    <p>Un dibujo. Tu logo. Esa foto.<br>El siguiente pin empieza aquí.</p><label class="upload-button"
+                        for="design-upload"><span>↑</span> Sube tu imagen<input id="design-upload" type="file"
+                            accept="image/jpeg,image/png,image/webp"></label>
+                    <div class="upload-meta"><span id="file-label">JPG, PNG o WebP · hasta 15 MB</span><button
+                            id="remove-image" hidden>Quitar</button></div>
+                    <p class="resolution-note" id="resolution-note" role="status" aria-live="polite" hidden></p>
+                    <div class="mode-switch" role="group" aria-label="Modo del simulador"><button id="mode-rotate"
+                            class="active" aria-pressed="true">Girar pin</button><button id="mode-crop"
+                            aria-pressed="false">Ajustar encuadre</button></div><label class="scale-label"
+                        for="image-scale"><span>Escala de imagen</span><output
+                            id="scale-value">100%</output></label><input type="range" id="image-scale" min="30"
+                        max="250" value="100" aria-label="Escala de la imagen">
+                    <div class="preview-actions"><button id="reset-preview">Restablecer <span>↺</span></button><button
+                            id="download-preview">Descargar vista <span>↓</span></button></div>
+                    <p class="studio-note">Tu imagen no se guardará.</p>
+                    <details class="technical-note">
+                        <summary>Sobre el tamaño y el encuadre <span>+</span></summary>
+                        <p>Pin terminado: 3.2 cm. Diámetro de corte del diseño: 4.4 cm. El área visible y su relación
+                            con el corte son aproximadas en esta simulación; confirmaremos el encuadre antes de
+                            producir. Esta vista no es una plantilla de impresión.</p>
+                    </details>
+                    <p class="feedback" id="studio-feedback" role="status" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+        <section id="el-pin" class="materials section">
+            <div class="section-heading">
+                <p class="eyebrow">EL PIN, DE CERCA</p>
+                <h2>Pequeño.<br>Bien hecho.</h2>
+                <p>Cuatro piezas, un solo pin.<br>Tu diseño queda protegido y listo para salir.</p><a class="text-link"
+                    href="#como-pedir">Hagamos el tuyo <span>→</span></a>
+            </div>
+            <div class="material-visual" role="img"
+                aria-label="Cuatro componentes separados: film transparente, papel fotográfico impreso, carcasa circular de metal y reverso de plástico blanco con broche metálico">
+                <div class="exploded-film"></div>
+                <div class="exploded-paper"><span>tu<br>idea.</span></div>
+                <div class="exploded-metal"></div>
+                <div class="exploded-base">
+                    <div class="base-clasp"></div>
+                </div><span class="layer-label film-label">Film</span><span class="layer-label paper-label">Papel
+                    fotográfico</span><span class="layer-label metal-label">Metal</span><span
+                    class="layer-label back-label">Reverso</span>
+            </div>
+            <div class="material-details">
+                <article><span class="tiny">LA PROTECCIÓN</span>
+                    <h3>Film transparente</h3>
+                    <p>Protege la impresión y le da ese acabado brillante.</p>
+                </article>
+                <article class="photo-paper-detail"><span class="tiny">DONDE VIVE TU DISEÑO</span>
+                    <h3>Papel fotográfico</h3>
+                    <p>Tu imagen impresa en papel fotográfico: el corazón de cada pin.</p>
+                </article>
+                <article><span class="tiny">LA FORMA</span>
+                    <h3>Carcasa de metal</h3>
+                    <p>Su borde se pliega hacia dentro y sujeta el film y el papel contra el reverso.</p>
+                </article>
+                <article><span class="tiny">PARA LLEVARLO CONTIGO</span>
+                    <h3>Plástico y broche</h3>
+                    <p>Un reverso de plástico blanco con broche metálico, listo para prender.</p>
+                </article>
+            </div>
+        </section>
+        <section class="possibilities section" aria-labelledby="audience-title">
+            <div class="possibilities-head">
+                <p class="eyebrow">UNA IDEA, MIL LUGARES</p>
+                <h2 id="audience-title">¿Para quién<br>es tu próximo pin?</h2>
+                <p>Un detalle personal o una idea compartida.<br>Cada pin empieza con alguien.</p>
+            </div>
+            <div class="audience-tabs" role="tablist" aria-label="Ideas según la ocasión"><button id="tab-regalos"
+                    role="tab" data-audience-tab aria-selected="true"
+                    aria-controls="panel-regalos">Regalos</button><button id="tab-comunidades" role="tab"
+                    data-audience-tab aria-selected="false" aria-controls="panel-comunidades"
+                    tabindex="-1">Comunidades</button><button id="tab-marcas" role="tab" data-audience-tab
+                    aria-selected="false" aria-controls="panel-marcas" tabindex="-1">Marcas y eventos</button></div>
+            <div class="audience-panel" id="panel-regalos" role="tabpanel" aria-labelledby="tab-regalos">
+                <div class="audience-scene gift-scene" role="img"
+                    aria-label="Composición gráfica de un regalo con un pin y una tarjeta personal">
+                    <div class="gift-wrap">
+                        <div class="gift-ribbon"></div>
+                    </div>
+                    <div class="gift-card">esto me<br>recordó a ti.</div>
+                    <div class="example-pin gift-pin">para<br>ti.</div><span class="scene-caption">UN RECUERDO QUE SE
+                        LLEVA</span>
+                </div>
+                <div class="audience-story"><span class="tiny">PARA ESA PERSONA</span>
+                    <h3>Hay regalos<br>que dicen más.</h3>
+                    <p>Su ilustración favorita, una foto juntos o esa frase que solo ustedes entienden. Un detalle
+                        pequeño puede guardar una historia enorme.</p><button class="text-link" data-contact>Preparemos
+                        ese detalle <span>↗</span></button>
+                </div>
+            </div>
+            <div class="audience-panel" id="panel-comunidades" role="tabpanel" aria-labelledby="tab-comunidades" hidden>
+                <div class="audience-scene community-scene" role="img"
+                    aria-label="Composición gráfica de una bolsa de tela con pines de un grupo"><svg
+                        class="tote-outline" viewBox="0 0 320 360" aria-hidden="true">
+                        <path d="M95 105V65c0-60 130-60 130 0v40M70 100h180l27 228H43L70 100Z" fill="none"
+                            stroke="currentColor" stroke-width="3" />
+                    </svg>
+                    <div class="example-pin community-pin-one">somos<br>parte.</div>
+                    <div class="example-pin community-pin-two">aquí.</div><span class="scene-caption">UNA IDEA QUE NOS
+                        UNE</span>
+                </div>
+                <div class="audience-story"><span class="tiny">PARA TU GENTE</span>
+                    <h3>Algo en común.<br>Algo que llevar.</h3>
+                    <p>Para tu club, colectivo o equipo. Una misma imagen puede hacer visible todo lo que comparten, en
+                        una mochila, una casaca o donde quieran llevarla.</p><button class="text-link"
+                        data-contact>Hagamos los pines de tu grupo <span>↗</span></button>
+                </div>
+            </div>
+            <div class="audience-panel" id="panel-marcas" role="tabpanel" aria-labelledby="tab-marcas" hidden>
+                <div class="audience-scene brand-scene" role="img"
+                    aria-label="Composición gráfica de una credencial de evento con un pin de marca">
+                    <div class="lanyard"></div>
+                    <div class="event-pass"><span>ESTÁS<br>INVITADO.</span><small>UN ENCUENTRO PARA RECORDAR</small>
+                        <div class="pass-lines"></div>
+                    </div>
+                    <div class="example-pin event-pin">tu<br>marca.</div><span class="scene-caption">TU IDENTIDAD, DE
+                        CERCA</span>
+                </div>
+                <div class="audience-story"><span class="tiny">PARA TU PRÓXIMO ENCUENTRO</span>
+                    <h3>Tu marca también<br>puede ir contigo.</h3>
+                    <p>Un lanzamiento, una feria o una celebración. Convierte tu identidad en un detalle que se reparte,
+                        se usa y se guarda después del evento.</p><button class="text-link" data-contact>Cuéntanos sobre
+                        tu evento <span>↗</span></button>
+                </div>
+            </div>
+            <p class="illustration-note">Composiciones y diseños de ejemplo.</p>
+        </section>
+        <section id="como-pedir" class="order section">
+            <div class="order-intro">
+                <p class="eyebrow">DE LA IDEA AL PEDIDO</p>
+                <h2>Hagamos<br>tus pines<span>.</span></h2>
+                <p class="order-invitation">Tú traes la idea.<br>Nosotros la convertimos en algo que puedes llevar.</p>
+                <div class="order-estimate">
+                    <div class="estimate-heading"><span>Tu punto de partida</span><span class="unit-price">S/ 2.50 /
+                            pin</span></div><label for="order-quantity">Pines con un mismo diseño <input
+                            id="order-quantity" type="number" min="10" value="10" step="1" inputmode="numeric"></label>
+                    <div class="estimate-total"><span>Pedido</span><strong id="estimate-total">S/ 25.00</strong></div>
+                    <div class="estimate-split"><span>20% para empezar<strong id="estimate-deposit">S/
+                                5.00</strong></span><span>80% antes del envío<strong id="estimate-balance">S/
+                                20.00</strong></span></div>
+                    <p id="estimate-note">Un mismo diseño · envío se coordina aparte.</p>
+                </div>
+                <p class="variety-note">¿Varios diseños? Lo cotizamos contigo.<br>Para 100+ pines, consulta el precio al
+                    por mayor.</p><button class="button whatsapp-button" data-contact><svg viewBox="0 0 24 24"
+                        aria-hidden="true">
+                        <path
+                            d="M20.5 3.5A11.9 11.9 0 0 0 1.7 17.8L0 24l6.4-1.7A11.9 11.9 0 0 0 24 12a11.8 11.8 0 0 0-3.5-8.5ZM12 21.8a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.8 1 1-3.7-.3-.4A9.9 9.9 0 1 1 12 21.8Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5H8c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 5 4.4 1.8.8 2.5.9 3.4.7.6-.1 1.7-.7 1.9-1.3.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.5-.4Z"
+                            fill="currentColor" />
+                    </svg> Hablemos de tu pedido <span>↗</span></button>
+            </div>
+            <ol class="order-steps">
+                <li><span class="step-number">01</span>
+                    <div>
+                        <h3>Todo empieza con tu idea</h3>
+                        <p>Nos compartes el diseño y cuántos pines necesitas. Juntos confirmamos el encuadre y
+                            coordinamos el envío.</p><a class="text-link" href="#simulador">Primero quiero probar mi
+                            diseño <span>↑</span></a>
+                    </div>
+                </li>
+                <li><span class="step-number">02</span>
+                    <div>
+                        <h3>Lo ponemos en marcha</h3>
+                        <p>Con el adelanto del <strong>20%</strong> iniciamos la producción. En <strong>2–3
+                                días</strong> desde el depósito, tus pines estarán listos.</p><span class="step-note">Ya
+                            estás un paso más cerca.</span>
+                    </div>
+                </li>
+                <li><span class="step-number">03</span>
+                    <div>
+                        <h3>Una foto. Ya están.</h3>
+                        <p>Te mostramos tu pedido terminado y pagas el <strong>80% restante</strong> antes del despacho.
+                        </p>
+                        <div class="mini-order-photo" aria-hidden="true">
+                            <span>tu<br>idea.</span><span>tu<br>idea.</span><span>tu<br>idea.</span></div>
+                    </div>
+                </li>
+                <li><span class="step-number">04</span>
+                    <div>
+                        <h3>Ahora sí, van contigo</h3>
+                        <p>Despachamos desde Lima, Perú. Coordinamos el costo de envío según tu destino; lo cubre el
+                            cliente.</p><span class="delivery-arrow" aria-hidden="true">⟶</span>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section class="faq section">
+            <div>
+                <p class="eyebrow">LO QUE QUIERES SABER</p>
+                <h2>Por si te<br>lo preguntabas.</h2>
+            </div>
+            <div class="faq-list">
+                <details>
+                    <summary>¿Cuál es el pedido mínimo?<span>+</span></summary>
+                    <p>10 pines con un mismo diseño, a S/ 2.50 por unidad. Si quieres diseños diferentes en el mismo
+                        pedido, prepararemos una cotización.</p>
+                </details>
+                <details>
+                    <summary>¿Qué tamaño tiene el pin?<span>+</span></summary>
+                    <p>El diámetro final es de 3.2 cm. Para producción, el diseño se corta con un diámetro de 4.4 cm,
+                        que incluye el material que se pliega alrededor del borde.</p>
+                </details>
+                <details>
+                    <summary>¿Cuánto demora mi pedido?<span>+</span></summary>
+                    <p>La producción tarda 2–3 días desde el depósito del adelanto del 20%. El tiempo de envío se
+                        coordina aparte según tu destino.</p>
+                </details>
+                <details>
+                    <summary>¿Hay precio al por mayor?<span>+</span></summary>
+                    <p>Sí. A partir de 100 pines, solicita una cotización al por mayor indicando cantidad y diseños.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo se paga y cómo se envía?<span>+</span></summary>
+                    <p>Pagas un 20% al iniciar. Te enviamos una foto del pedido terminado y pagas el 80% restante antes
+                        del despacho. Salimos desde Lima y el envío tiene un costo aparte, a cargo del cliente.</p>
+                </details>
+            </div>
+        </section>
+        <section class="closing">
+            <p class="tiny">UNA IDEA MERECE SALIR.</p>
+            <h2>Que la próxima<br>sea la tuya</h2><button class="button whatsapp-button" data-contact><svg
+                    viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M20.5 3.5A11.9 11.9 0 0 0 1.7 17.8L0 24l6.4-1.7A11.9 11.9 0 0 0 24 12a11.8 11.8 0 0 0-3.5-8.5ZM12 21.8a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.8 1 1-3.7-.3-.4A9.9 9.9 0 1 1 12 21.8Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5H8c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 5 4.4 1.8.8 2.5.9 3.4.7.6-.1 1.7-.7 1.9-1.3.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.5-.4Z"
+                        fill="currentColor" />
+                </svg> ¡Hablemos! <span>↗</span></button>
+        </section>
+    </main>
+    <footer><a class="footer-brand" href="#" aria-label="Dzing Pins, volver al inicio"><img src="/dzignlogo.png"
+                alt="Logo Dzing Pins" width="76" height="76"><span>Ideas que van contigo.</span></a>
+        <div class="footer-contact"><button data-contact aria-label="Preparar pedido por WhatsApp"><svg
+                    viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M20.5 3.5A11.9 11.9 0 0 0 1.7 17.8L0 24l6.4-1.7A11.9 11.9 0 0 0 24 12a11.8 11.8 0 0 0-3.5-8.5ZM12 21.8a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.8 1 1-3.7-.3-.4A9.9 9.9 0 1 1 12 21.8Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5H8c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 5 4.4 1.8.8 2.5.9 3.4.7.6-.1 1.7-.7 1.9-1.3.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.5-.4Z"
+                        fill="currentColor" />
+                </svg>WhatsApp</button><a class="facebook-button" href="https://www.facebook.com/dzignyourpins"
+                target="_blank" rel="noopener" aria-label="Visitar página de Facebook"><svg viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.3c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z" />
+                </svg>Facebook</a></div><span class="tiny">LIMA, PERÚ · 2026</span>
+    </footer>
+    <dialog id="contact-dialog"><button class="dialog-close" aria-label="Cerrar">×</button>
+        <p class="eyebrow">EMPECEMOS CON UNA IDEA</p>
+        <h2>Tu próximo<br>pin empieza aquí.</h2>
+        <p>Prepara tu consulta con la cantidad y el diseño que tienes en mente.</p><label
+            for="inquiry-quantity">Cantidad de pines</label><input id="inquiry-quantity" type="number" min="10"
+            value="10"><label for="inquiry-details">Cuéntanos tu idea</label><textarea id="inquiry-details" rows="3"
+            placeholder="Un mismo diseño para mi equipo…"></textarea><a class="button whatsapp-button" id="send-inquiry"
+            href="https://wa.me/51906093061" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                    d="M20.5 3.5A11.9 11.9 0 0 0 1.7 17.8L0 24l6.4-1.7A11.9 11.9 0 0 0 24 12a11.8 11.8 0 0 0-3.5-8.5ZM12 21.8a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.8 1 1-3.7-.3-.4A9.9 9.9 0 1 1 12 21.8Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5H8c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.7 1.2 2.9c.1.2 2 3.1 5 4.4 1.8.8 2.5.9 3.4.7.6-.1 1.7-.7 1.9-1.3.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.5-.4Z"
+                    fill="currentColor" />
+            </svg> Abrir WhatsApp <span>↗</span></a><button class="copy-inquiry" id="copy-inquiry">Copiar
+            consulta</button>
+        <p class="contact-setup">Al abrir WhatsApp, tu consulta estará lista para revisar y enviar. +51 906 093 061.</p>
+        <p id="contact-status" role="status" aria-live="polite"></p>
+    </dialog>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
