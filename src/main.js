@@ -21,15 +21,31 @@ function graphicTexture(type = 'idea') {
 const visibleRatio=3.2/4.4; // Provisional print-to-visible-area relationship, confirmed before production.
 function curvedFace(){
   const positions=[],uvs=[],indices=[];const rings=32,segments=128;
+  const crossSection=[];
   for(let ring=0;ring<=rings;ring++){
     const radius=ring/rings*.979;
+    crossSection.push({radius,z:.036+.145*Math.pow(1-radius*radius,.7),paperRadius:radius});
+  }
+  // The printed paper continues over the shoulder and folds behind the back.
+  // Its UV radius follows distance along the paper, rather than stretching the
+  // front's last pixel into a band or restarting the image at the outer edge.
+  const shoulder=crossSection.at(-1);
+  const fold=new THREE.CatmullRomCurve3([
+    [shoulder.radius,shoulder.z],[.993,.035],[1.003,.005],[1.004,-.035],
+    [.994,-.085],[.975,-.125],[.951,-.15],[.935,-.139]
+  ].map(([r,z])=>new THREE.Vector3(r,z,0)),false,'centripetal').getPoints(56);
+  let paperRadius=shoulder.paperRadius;
+  for(let step=1;step<fold.length;step++){
+    paperRadius+=fold[step].distanceTo(fold[step-1]);
+    crossSection.push({radius:fold[step].x,z:fold[step].y,paperRadius});
+  }
+  for(const {radius,z,paperRadius} of crossSection){
     for(let seg=0;seg<=segments;seg++){
       const a=seg/segments*Math.PI*2,x=Math.cos(a)*radius,y=Math.sin(a)*radius;
-      const z=.036+.145*Math.pow(1-radius*radius,.7);
-      positions.push(x,y,z);uvs.push(.5+x/2*visibleRatio,.5+y/2*visibleRatio);
+      positions.push(x,y,z);uvs.push(.5+Math.cos(a)*paperRadius/2*visibleRatio,.5+Math.sin(a)*paperRadius/2*visibleRatio);
     }
   }
-  for(let r=0;r<rings;r++)for(let s=0;s<segments;s++){
+  for(let r=0;r<crossSection.length-1;r++)for(let s=0;s<segments;s++){
     const a=r*(segments+1)+s,b=a+segments+1;indices.push(a,b,a+1,b,b+1,a+1);
   }
   const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geo.setAttribute('uv',new THREE.Float32BufferAttribute(uvs,2));geo.setIndex(indices);geo.computeVertexNormals();return geo;
@@ -48,19 +64,33 @@ function makePin(texture){
   ].map(([r,z])=>new THREE.Vector3(r,z,0)),false,'centripetal');
   const plastic=new THREE.Mesh(new THREE.LatheGeometry(profile.getPoints(80).map(p=>new THREE.Vector2(Math.max(0,p.x),p.y)),128),white);
   plastic.rotation.x=Math.PI/2;group.add(plastic);
-  // The circular metal shell folds inward around the plastic base to clamp film and paper.
-  const metalProfile = new THREE.CatmullRomCurve3([
-    [.976,.036],[.996,.014],[1,-.035],[.99,-.087],[.973,-.129],[.951,-.15],[.935,-.139]
-  ].map(([r,z])=>new THREE.Vector3(r,z,0)),false,'centripetal');
-  const shell=new THREE.Mesh(new THREE.LatheGeometry(metalProfile.getPoints(40).reverse().map(p=>new THREE.Vector2(p.x,p.y)),128),steel);
-  shell.rotation.x=Math.PI/2;group.add(shell);
-  // The clasp sits proud of a recessed plastic back, with curved metal wire and mounting feet.
+  // The metal mounting discs remain visible through the two rear openings.
   const mountGeo=new THREE.CylinderGeometry(.12,.14,.035,40);
   [-.57,.57].forEach(x=>{const mount=new THREE.Mesh(mountGeo,steel);mount.rotation.x=Math.PI/2;mount.position.set(x,-.02,-.139);group.add(mount)});
-  const wirePoints=[[-.57,-.03,-.16],[-.60,-.06,-.20],[-.65,-.18,-.25],[-.55,-.24,-.26],[-.45,-.19,-.28],[-.46,-.01,-.31],[.48,.035,-.31],[.64,.05,-.27],[.66,-.08,-.24],[.55,-.12,-.24],[.50,-.04,-.16]];
-  const curve=new THREE.CatmullRomCurve3(wirePoints.map(p=>new THREE.Vector3(...p)));
-  group.add(new THREE.Mesh(new THREE.TubeGeometry(curve,90,.018,10,false),steel));
-  const needle=new THREE.Mesh(new THREE.CylinderGeometry(.012,.019,1.14,12),steel);needle.rotation.z=Math.PI/2;needle.position.set(0,.009,-.255);group.add(needle);
+  // A closed safety pin: straight pointed needle, a one-turn spring, a return
+  // arm and a U-shaped wire guard that receives and protects the needle tip.
+  function wire(points,radius=.016){
+    const curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p)),false,'centripetal');
+    group.add(new THREE.Mesh(new THREE.TubeGeometry(curve,Math.max(24,points.length*8),radius,12,false),steel));
+  }
+  function straightWire(from,to,radius=.016,tipRadius=radius){
+    const start=new THREE.Vector3(...from),end=new THREE.Vector3(...to),direction=end.clone().sub(start);
+    const mesh=new THREE.Mesh(new THREE.CylinderGeometry(tipRadius,radius,direction.length(),16),steel);
+    mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),direction.normalize());
+    mesh.position.copy(start.add(end).multiplyScalar(.5));group.add(mesh);
+  }
+  const coil=[];
+  for(let step=0;step<=48;step++){
+    const angle=Math.PI/2+step/48*Math.PI*2;
+    coil.push([-.56+Math.cos(angle)*.065,-.04+Math.sin(angle)*.065,-.282+step/48*.035]);
+  }
+  wire(coil);
+  straightWire([-.56,.025,-.282],[.51,.025,-.282],.014);
+  straightWire([.51,.025,-.282],[.57,.025,-.282],.014,0);
+  straightWire([-.56,.025,-.247],[.51,.025,-.247]);
+  wire([[.51,.025,-.247],[.61,.005,-.251],[.63,-.06,-.264],[.60,-.115,-.28],[.53,-.12,-.296],[.48,-.075,-.301],[.48,.037,-.301]]);
+  wire([[-.60,-.067,-.257],[-.60,-.043,-.207],[-.57,-.02,-.157]]);
+  wire([[.60,-.078,-.28],[.60,-.042,-.207],[.57,-.02,-.157]]);
   
   return group;
 }
