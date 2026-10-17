@@ -1,0 +1,2 @@
+Coloca aquí los logotipos oficiales de Yape y Plin, descargados del kit de marca de cada una:
+yape.svg y plin.svg (o .png: cambia la ruta en index.html). Si no existen, el icono se oculta solo.

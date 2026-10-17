@@ -1,0 +1,12 @@
+Aquí van las fotos de pedidos reales.
+
+1. Copia la foto en esta carpeta (ej. pedido-1.jpg). Mejor en formato cuadrado, unos 800 x 800 px.
+2. Agrégala en public/pedidos.json:
+
+{
+  "fotos": [
+    { "src": "/pedidos/pedido-1.jpg", "alt": "50 pines para el club de lectura", "texto": "Club de lectura · 50 pines" }
+  ]
+}
+
+"texto" es opcional. Mientras la lista esté vacía, la sección no aparece en la web publicada.

@@ -15,3 +15,209 @@
 #resolution-note{display:block;min-height:64px;line-height:1.6!important;visibility:visible}
 #resolution-note[hidden]{visibility:hidden}
 .feedback{min-height:60px;line-height:1.5!important;overflow-wrap:anywhere}
+
+/* Métodos de pago */
+.payment-methods{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:14px 0 0;max-width:100%;min-width:0}
+.payment-methods li{display:inline-flex;align-items:center;gap:6px;max-width:100%;white-space:nowrap;font-size:12px;border:1px solid #b6c0aa;border-radius:30px;padding:6px 13px;color:#343f27;background:#f3f4eb}
+.payment-methods li img{display:block;flex:none;width:18px;height:18px}
+.payment-methods .pay-yape{background:#742284;border-color:#742284;color:#fff}
+.payment-methods .pay-plin{background:#00b8d9;border-color:#00b8d9;color:#06303a}
+/* Píldoras dentro de .order-steps: anular display:grid, padding y position heredados de .order-steps li */
+.order-steps .payment-methods li{position:static;display:inline-flex;grid-template-columns:none;gap:6px;padding:6px 13px;justify-content:center;align-items:center;text-align:center;line-height:1.3}
+
+/* Galería de pedidos reales */
+.orders-gallery .section-heading{margin-bottom:45px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.gallery-grid figure{margin:0}
+.gallery-grid img,.gallery-placeholder span{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background:#e9ebe1}
+.gallery-grid figcaption{font-size:13px;color:#717467;margin-top:10px}
+.gallery-placeholder span{display:grid;place-content:center;text-align:center;border:1px dashed #b6c0aa;font-family:var(--rounded);font-size:30px;line-height:.95;letter-spacing:-1.2px;color:#8a947b}
+@media(max-width:1100px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.gallery-grid{gap:12px}.orders-gallery .section-heading{margin-bottom:30px}}
+
+/* Menú inferior en móvil */
+.mobile-nav{display:none}
+@media(max-width:760px){
+ .mobile-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:50;background:#f7f7f2f2;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+ .mobile-nav a,.mobile-nav button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 2px;font-size:12px;color:#77796e;border-radius:12px;min-height:52px;justify-content:center}
+ .mobile-nav svg{width:22px;height:22px}
+ .mobile-nav a[aria-current]{color:#191919;font-weight:600}
+ .mobile-nav .mobile-nav-contact{color:#218c57;font-weight:600}
+ body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+ html{scroll-padding-top:20px}
+}
+
+/* Legibilidad: tamaños mínimos de letra */
+.tiny,.eyebrow{font-size:11px}
+.material-details .tiny,.controls-title .tiny,.usecase-list article>.tiny,.price-block>.tiny,.closing .tiny,footer .tiny,footer>.tiny,dialog .eyebrow,.hero-caption .tiny,.studio-top{font-size:11px}
+.header nav,.contact-button,.button,.faq-list summary{font-size:13px}
+.text-link,.order-steps .text-link,.hero-foot,.upload-meta,.upload-meta button,.mode-switch button,.scale-label,.preview-actions,.preview-actions button,.studio-bottom,.studio-controls .studio-note,.technical-note,.editor-guides>span,.hero-examples,.illustration-note,.estimate-split,.order-estimate>p,.variety-note,.unit-price,.step-note,.order-steps .step-number,dialog .contact-setup,.copy-inquiry,#contact-status,.feedback,.resolution-note,.footer-contact button,.footer-contact a,.footer-brand>span,footer>span{font-size:12px!important}
+.material-details p,.studio-controls>p,.usecase-list p,.faq-list p,.order-steps p,dialog>p{font-size:14px}
+.layer-label,.scene-caption{font-size:10px}
+.event-pass small{font-size:8px}
+@media(max-width:760px){
+ .tiny,.eyebrow,.hero-copy .eyebrow,.material-details .tiny,.hero-caption .tiny,footer>.tiny,.studio-top{font-size:11px;letter-spacing:1px}
+ .hero-description,.section-heading>p:last-child,.sim-heading>p:last-child,.possibilities-head>p:last-child,.materials .section-heading>p:last-of-type,.order-invitation,.audience-story>p{font-size:15px}
+ .material-details p,.studio-controls>p,.usecase-list p,.faq-list p,.order-steps p,dialog>p{font-size:14px}
+ .faq-list summary,.audience-tabs button,.order-intro>.button,.contact-button{font-size:14px}
+ .text-link,.order-steps .text-link,.hero-foot,.mode-switch button,.scale-label,.preview-actions,.preview-actions button,.studio-bottom,.estimate-split,.unit-price,.illustration-note,.footer-contact button,.footer-contact a,.footer-brand>span,footer>span{font-size:13px!important}
+ .layer-label{font-size:11px}
+ dialog input,dialog textarea,.order-estimate input{font-size:16px}
+}
+
+/* Simulador en móvil: la vista previa queda junto a los controles */
+@media(max-width:760px){
+ .studio-controls{display:contents}
+ .studio-controls>*{margin-left:24px;margin-right:24px}
+ .studio-controls .controls-title{order:-3;margin-top:26px;margin-bottom:14px}
+ .studio-controls h3{order:-2;margin-bottom:10px}
+ .studio-controls>p:not([id]){order:-1;margin-bottom:22px}
+ .studio-stage{order:0;height:360px;min-height:360px}
+ .studio-controls .upload-button{order:1;width:auto;margin-top:18px}
+ .studio-controls .upload-meta{order:2;margin-bottom:16px}
+ .studio-controls .mode-switch{order:3}
+ .studio-controls .scale-label{order:4;margin-top:18px}
+ .studio-controls #image-scale{order:5;width:auto}
+ .studio-controls .preview-actions{order:6}
+ #resolution-note{order:7;min-height:0;margin:0 24px 14px!important}
+ #resolution-note[hidden]{display:none}
+ .studio-controls .feedback{order:8;min-height:0}
+ .studio-controls .studio-note{order:9}
+ .studio-controls .technical-note{order:10;margin-bottom:26px}
+}
+@media(max-width:380px){.mobile-nav a,.mobile-nav button{font-size:11px}}
+
+/* El pin, de cerca: piezas más tumbadas, reverso fiel al pin real y separación al pasar el ratón */
+/* Escala real: pin terminado = --d (3,2 cm); papel = corte de 4,4 cm (×1,375); film ≈ ×1,45.
+   Todo se mide con --d (cqw del propio visual), así la pila cabe y las etiquetas siguen alineadas en cada ancho. */
+.material-visual{container-type:inline-size;--dmax:200px;--H:490px;height:var(--H)}
+.material-visual>*{--d:min(var(--dmax),48cqw);--oy:calc((var(--H) - var(--d)*2.26 - 30px)/2)}
+.exploded-film,.exploded-paper,.exploded-metal,.exploded-base{--lift:0px;--spin:0deg;width:var(--w);height:var(--w);top:calc(var(--oy) + var(--c) - var(--w)/2);transform:translateX(-50%) translateY(var(--lift)) rotateX(64deg) rotateZ(calc(-18deg + var(--spin)))}
+.exploded-film,.film-label{--w:calc(var(--d)*1.45);--c:calc(var(--d)*.36)}
+.exploded-paper,.paper-label{--w:calc(var(--d)*1.375);--c:calc(var(--d)*.98)}
+.exploded-metal,.metal-label{--w:var(--d);--c:calc(var(--d)*1.54)}
+.exploded-base,.back-label{--w:var(--d);--c:calc(var(--d)*2.04)}
+.layer-label{top:calc(var(--oy) + var(--c) - var(--d)*.2 - 6px)}
+.exploded-paper{font-size:calc(var(--d)*.235)}
+/* Zona que queda a la vista (3,2 cm); el resto del papel se dobla por el canto */
+.exploded-paper:before{content:'';position:absolute;inset:13.64%;border-radius:50%;border:1px dashed #b3b6a9}
+/* Carcasa niquelada espejo: reflejos de torneado, brillo en cúpula y canto plegado */
+.exploded-metal{border:0;background:radial-gradient(circle closest-side,#0000 0 85.5%,#fbfcf8 87.5%,#a3a89f 90.5%,#eef0ea 93.5%,#7b8078 97%,#d4d7cf 100%),radial-gradient(ellipse 58% 34% at 32% 24%,#fffffff0,#fff0 72%),radial-gradient(ellipse 46% 22% at 68% 82%,#ffffff70,#fff0 75%),conic-gradient(from 205deg,#4c514a,#b9bdb5 8%,#666b63 17%,#e4e7e0 29%,#7a7f77 41%,#3a3e38 54%,#9da29a 65%,#f1f3ee 76%,#626760 89%,#4c514a);box-shadow:inset 0 -8px 16px #0000004d,0 3px 0 #c9ccc4,0 5px 0 #7c8179,0 7px 0 #50544e,0 22px 30px #0005}
+/* Reverso visto por su cara interna; canto escalonado grueso (labio, ranura, segundo escalón) */
+.exploded-base{border:0;background:#eeeee8;box-shadow:0 3px 0 #f6f6f1,0 6px 0 #c3c6bb,0 10px 0 #e3e4dc,0 14px 0 #a9aca1,0 26px 28px #0005}
+.base-art{position:absolute;inset:0;display:block;width:100%;height:100%;border-radius:50%}
+@media(max-width:1100px){.material-visual{--dmax:180px;--H:420px}}
+@media(max-width:760px){.material-visual{--dmax:190px;--H:470px}}
+@media(max-width:380px){.material-visual{--H:400px}}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+ .exploded-film,.exploded-paper,.exploded-metal,.exploded-base,.layer-label{transition:transform .7s cubic-bezier(.2,.75,.25,1)}
+ .exploded-paper,.paper-label{transition-delay:.03s}
+ .exploded-metal,.metal-label{transition-delay:.06s}
+ .exploded-base,.back-label{transition-delay:.09s}
+ .material-visual:hover .exploded-film{--lift:-16px;--spin:5deg}
+ .material-visual:hover .exploded-paper{--lift:-7px;--spin:3deg}
+ .material-visual:hover .exploded-metal{--lift:3px;--spin:1deg}
+ .material-visual:hover .exploded-base{--lift:12px;--spin:-2deg}
+ .material-visual:hover .film-label{transform:translateY(-16px)}
+ .material-visual:hover .paper-label{transform:translateY(-7px)}
+ .material-visual:hover .metal-label{transform:translateY(3px)}
+ .material-visual:hover .back-label{transform:translateY(12px)}
+}
+
+/* Legibilidad, segundo ajuste: un punto más en toda la escala */
+.tiny,.eyebrow,.material-details .tiny,.controls-title .tiny,.usecase-list article>.tiny,.price-block>.tiny,.closing .tiny,footer .tiny,footer>.tiny,dialog .eyebrow,.hero-caption .tiny,.studio-top{font-size:12px}
+.header nav,.contact-button,.button,.faq-list summary,.audience-tabs button{font-size:14px}
+.text-link,.order-steps .text-link,.hero-foot,.upload-meta,.upload-meta button,.mode-switch button,.scale-label,.preview-actions,.preview-actions button,.studio-bottom,.studio-controls .studio-note,.technical-note,.editor-guides>span,.hero-examples,.illustration-note,.estimate-split,.order-estimate>p,.variety-note,.unit-price,.step-note,dialog .contact-setup,.copy-inquiry,#contact-status,.feedback,.resolution-note,.footer-contact button,.footer-contact a,.footer-brand>span,footer>span,.payment-methods li,.gallery-grid figcaption{font-size:13px!important}
+.material-details p,.studio-controls>p,.usecase-list p,.faq-list p,.order-steps p,dialog>p,.estimate-heading,.order-estimate label{font-size:15px}
+.hero-description,.section-heading>p:last-child,.sim-heading>p:last-child,.possibilities-head>p:last-child,.materials .section-heading>p:last-of-type,.order-invitation,.audience-story>p{font-size:16px}
+.layer-label,.scene-caption{font-size:11px}
+@media(max-width:760px){
+ .tiny,.eyebrow,.hero-copy .eyebrow,.material-details .tiny,.hero-caption .tiny,footer>.tiny,.studio-top{font-size:12px}
+ .hero-description,.section-heading>p:last-child,.sim-heading>p:last-child,.possibilities-head>p:last-child,.materials .section-heading>p:last-of-type,.order-invitation,.audience-story>p{font-size:16px}
+ .material-details p,.studio-controls>p,.usecase-list p,.faq-list p,.order-steps p,dialog>p{font-size:15px}
+ .faq-list summary,.audience-tabs button,.order-intro>.button,.contact-button,.button{font-size:15px}
+ .text-link,.order-steps .text-link,.hero-foot,.mode-switch button,.scale-label,.preview-actions,.preview-actions button,.studio-bottom,.estimate-split,.unit-price,.illustration-note,.footer-contact button,.footer-contact a,.footer-brand>span,footer>span,.upload-meta,.upload-meta button,.studio-controls .studio-note,.technical-note,.order-estimate>p,.variety-note,.step-note,.feedback,.resolution-note{font-size:14px!important}
+ .layer-label{font-size:12px}
+}
+@media(max-width:380px){.audience-tabs button{font-size:13px}}
+
+/* Confianza en el hero */
+.hero-trust{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:9px;font-size:14px;color:#65655f}
+.hero-trust li{display:flex;align-items:center;gap:10px}
+.hero-trust li:before{content:'';flex:none;width:15px;height:15px;border-radius:50%;background:#222 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.2 2.2 2.2 4.8-4.8' fill='none' stroke='%23f7f7f2' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+@media(max-width:760px){.hero-trust{margin-top:18px;font-size:15px}}
+
+/* Carcasa con volumen: superficie curva (sombreado esférico y brillo desplazado) y canto metálico visible, no un disco plano */
+.exploded-metal{background:radial-gradient(circle closest-side,#0000 0 86%,#fbfcf8 88%,#a3a89f 91%,#eef0ea 94%,#6f746c 97.5%,#c9ccc4 100%),radial-gradient(ellipse 44% 26% at 36% 30%,#fffffff2,#fff0 70%),radial-gradient(ellipse 30% 14% at 64% 76%,#ffffff8c,#fff0 75%),conic-gradient(from 205deg,#0000,#fff3 9%,#0000 20%,#0002 38%,#0000 52%,#fff4 70%,#0000 86%),radial-gradient(circle at 42% 36%,#f7f9f4 0,#d3d7ce 26%,#9a9f96 55%,#646961 78%,#3e423c 100%);box-shadow:inset 0 -12px 22px #0000005c,inset 0 8px 14px #ffffff59,0 3px 0 #e3e6de,0 6px 0 #a3a89e,0 9px 0 #eef0ea,0 12px 0 #7b8077,0 15px 0 #565a53,0 28px 30px #0005}
+
+/* Móvil: .outline-text toma el aspecto del resto del h2 (sin contorno, mismo color y espaciado),
+   porque el contorno transparente se deformaba con Arial Bold en Android/iOS. Escritorio no cambia. */
+@media(max-width:760px){
+  .outline-text{-webkit-text-stroke:0;color:inherit;letter-spacing:inherit}
+}
+
+/* "Para quién": escenas 3D; las ilustraciones planas quedan solo como respaldo sin WebGL */
+.audience-scene canvas{position:absolute;inset:0;display:block;width:100%;height:100%}
+.audience-scene.webgl-ready>:not(canvas):not(.scene-caption){display:none}
+.audience-scene .scene-caption{z-index:1}
+
+/* Logo horizontal: encabezado y pie en blanco, el mismo fondo del logo */
+.header,footer{background:#fff}
+.header-logo img{display:block;height:58px;width:auto}
+.footer-brand img{width:auto;height:58px;border-radius:0;background:none;object-fit:contain}
+@media(max-width:760px){
+ .header-logo img{height:44px}
+ .footer-brand img{width:auto;height:48px}
+}
+
+/* Poppins para el texto que no es título (h1/h2 y var(--rounded) siguen igual) */
+:root{font-family:Poppins,Arial,sans-serif}
+.tiny,.eyebrow{font-family:Poppins,Arial,sans-serif}
+.price-block>div span{font-family:Poppins,Arial,sans-serif}
+
+/* Simplificación del simulador, secciones de una pantalla en escritorio y menú móvil centrado */
+.studio{min-height:0}
+.studio-stage{height:540px;min-height:540px}
+@media(max-width:1100px){.studio-stage{height:480px;min-height:480px}}
+.studio-controls{display:flex;flex-direction:column;justify-content:center}
+.studio-controls .upload-button{margin-top:0}
+.sim-heading>p:last-child{white-space:nowrap}
+.order-invitation{max-width:none}
+.variety-note{margin:14px 0 20px}
+.order-estimate{margin-top:24px;padding:20px 24px}
+.order-estimate label{margin-top:16px}
+@media(max-width:760px){
+ .mobile-nav a,.mobile-nav button{text-align:center;justify-content:center;align-items:center;gap:3px;white-space:nowrap;font-size:11px;letter-spacing:-.1px;padding:7px 0;min-width:0;line-height:1.2}
+ .studio-stage{order:0;height:320px;min-height:320px}
+ .studio-controls{display:contents}
+ .studio-controls .upload-button{order:1;width:auto;margin-top:22px}
+ .studio-controls .upload-meta{order:2;margin-bottom:16px}
+ .studio-controls .technical-note{order:10;margin-bottom:26px}
+ .sim-heading>p:last-child{white-space:normal}
+}
+@media(max-width:380px){.mobile-nav a,.mobile-nav button{font-size:10.5px}}
+@media(min-width:761px){
+ .hero,.simulator,.materials,.possibilities,.order,.faq,.orders-gallery:not([hidden]){min-height:100vh;min-height:100svh}
+ .hero{min-height:calc(100vh - 105px);min-height:calc(100svh - 105px)}
+ .simulator,.possibilities,.order,.faq,.orders-gallery:not([hidden]){display:flex;flex-direction:column;justify-content:center;padding-top:56px;padding-bottom:56px}
+ .faq{display:grid;align-content:center}
+ /* .possibilities tiene un grid de 2 columnas heredado del CSS original: se centra con flex en columna */
+ .possibilities{display:flex;flex-direction:column;justify-content:center}
+ .possibilities{padding-top:56px;padding-bottom:56px}
+ .order{display:grid;align-content:center;align-items:center}
+ .materials{padding-top:56px;padding-bottom:56px}
+ .hero{align-items:center}
+ .hero-copy{padding-top:40px;padding-bottom:40px}
+ .hero-scene{height:min(620px,calc(100svh - 180px));margin-top:0}
+ .simulator .studio{margin-top:28px}
+ .order-steps{margin-top:5px}
+ .order-steps li{padding-bottom:26px}
+ .order-steps li:last-child{padding-bottom:0}
+ .order-steps h3{font-size:22px;margin:4px 0 8px}
+ .order-steps:before{bottom:60px}
+ .order-estimate{margin-top:20px}
+}
+
+
+/* Línea divisoria ligera antes de las preguntas frecuentes */
+.faq{border-top:1px solid var(--line)}

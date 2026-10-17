@@ -1,36 +1,51 @@
-# Dzing Pins — primera vista local
+# Dzing Pins
 
-Landing estática en español, construida con Vite y Three.js.
+Esta es la página web de mi negocio de pines personalizados. Hacemos pines de 3.2 cm desde Lima, Perú, y la idea de la web es que la gente pueda ver cómo quedaría su propio diseño antes de pedirlo.
 
-## Ejecutar
+La armé con Vite y Three.js, sin frameworks ni backend. Todo pasa en el navegador.
+
+## Qué tiene
+
+Arriba hay una escena en 3D con algunos de mis diseños como pines, que flotan suavemente.
+
+Lo que más me gusta es el simulador. Subes tu imagen (JPG, PNG o WebP), la acomodas dentro del círculo, cambias la escala, giras el pin para ver el reverso y puedes descargar la vista previa. La imagen no se sube a ningún lado, se queda en tu navegador. Si la imagen tiene poca resolución, te avisa. Y si el dispositivo no soporta 3D, muestra una versión plana.
+
+Después vienen las secciones del pin por dentro (film, papel fotográfico, metal y reverso), ideas según para quién es el pin, una calculadora de pedido con el adelanto y el saldo, las preguntas frecuentes y el contacto por WhatsApp. El botón de WhatsApp arma el mensaje con la cantidad y lo que el cliente escribió.
+
+En celular hay un menú abajo, tipo app, para moverse entre secciones y escribir por WhatsApp sin tener que subir.
+
+## Precios y pagos
+
+- S/ 2.50 por pin, mínimo 10 con el mismo diseño.
+- Desde 100 pines se cotiza al por mayor.
+- 20% de adelanto para empezar y 80% antes del envío.
+- Se paga por Yape, Plin o transferencia.
+- Producción de 2 a 3 días. El envío sale desde Lima y lo paga el cliente.
+
+## Fotos de pedidos
+
+Hay una sección lista para mostrar fotos de pedidos reales. Para agregar una, la copio en `public/pedidos/` y la anoto en `public/pedidos.json` (dentro de esa carpeta hay un `LEEME.txt` con el formato). Mientras no haya fotos, la sección no aparece en la web publicada. En `npm run dev` se ven unos espacios de muestra para revisar cómo va a quedar.
+
+Los diseños que salen en el 3D están en `public/designs/` y se configuran en `public/pin-designs.json`.
+
+## Para correrlo
 
 ```sh
 npm install
 npm run dev
 ```
 
-Para producir los archivos estáticos:
+Para generar la versión final:
 
 ```sh
 npm run build
 ```
 
-La salida está en `dist/`, preparada para un alojamiento estático futuro. No hay publicación, backend, autenticación ni almacenamiento de imágenes.
+Queda todo en `dist/`, listo para subir a cualquier hosting estático.
 
-## Qué incluye
+## Pendientes
 
-- Hero con tres pines volumétricos: cara curva, borde metálico plegado, base plástica blanca con cavidad y broche de metal modelado.
-- Simulador con una imagen activa JPG/PNG/WebP, recorte por arrastre y escala, giro, reverso, reinicio y descarga PNG.
-- Advertencia de resolución orientativa, procesamiento local y alternativa plana si WebGL no está disponible.
-- Navegación por teclado del simulador: flechas para girar o mover el encuadre; Inicio restablece.
-- Movimiento suave que se detiene fuera de pantalla; respeta la preferencia de movimiento reducido.
-- Composición de materiales, usos, pedido y FAQ con las condiciones comerciales suministradas.
-- Diálogo de consulta que copia el texto. Falta configurar el contacto oficial; no se inventó un número o enlace.
-
-## Pendiente antes de publicar
-
-1. Configurar el WhatsApp y/o Facebook oficiales.
-2. Confirmar con producción la relación exacta entre la zona visible de 3.2 cm y el corte de 4.4 cm. El simulador es una referencia visual aproximada y no una plantilla de impresión.
-3. Confirmar los textos finales del negocio y las imágenes que se quieran usar.
-
-El logo original está disponible en `public/dzignlogo.png`. Los diseños tipográficos de muestra fueron creados para esta vista previa.
+- Definir el nombre final de la marca y el logo.
+- Agregar las fotos de pedidos reales.
+- Confirmar con producción cuánto del corte de 4.4 cm queda visible en el pin de 3.2 cm. Por ahora el simulador es una referencia, no una plantilla de impresión.
+- Agregar las etiquetas para que el enlace se vea con imagen al compartirlo, y el favicon.
